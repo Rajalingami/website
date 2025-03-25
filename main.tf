@@ -33,6 +33,7 @@ provider "aws" {
 
 }
 
+// added comments for the aws_instance
 resource "aws_instance" "instance" {
   ami           = "ami-08b5b3a93ed654d19"
   instance_type = var.instance_type
