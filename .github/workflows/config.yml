@@ -42,7 +42,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}  # Correctly reference the secret
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  # Correctly reference the secret
-          aws-region: ${{ secrets.AWS_REGION }}  # Correctly reference the secret 
+          aws-region: ${{ secrets.AWS_REGION }}  # Correctly reference the secret
+          role-arn: ${{ secrets.AWS_ROLE_ARN }}
             
       - name: Terraform init
         run: |
