@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  apply:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -40,10 +40,9 @@ jobs:
       - name: Set up AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # aws-region: ${{ secrets.AWS_REGION }}
-            aws-region: 'us-east-1'
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}  # Correctly reference the secret
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  # Correctly reference the secret
+          aws-region: ${{ secrets.AWS_REGION }}  # Correctly reference the secret
             
       - name: Terraform init
         run: |
