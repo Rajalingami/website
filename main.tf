@@ -29,8 +29,9 @@ cloud {
 }
 
 provider "aws" {
-  region = var.region
-
+  region = var.AWS_REGION
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_SECRET_ACCESS_KEY
 }
 
 // added comments for the aws_instance
