@@ -33,6 +33,7 @@ jobs:
                  
       - name: Terraform init
         run: |
+          cd website
           terraform init
           terraform validate
     
